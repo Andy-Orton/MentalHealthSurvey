@@ -1,0 +1,70 @@
+footer {
+    font-size: 15px;
+    text-align: center;
+    display: none;
+    padding-top: 0.5em;
+}
+footer button{
+    margin-left: auto;
+    margin-right: auto;
+}
+#warning {
+    max-width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+main {
+    display: none;
+}
+
+h1 {
+    align-content:center;
+    background-color:blue;
+    text-align:center;
+    color:white;
+    margin-left:3em;
+    margin-right:3em;
+}
+
+#result p{
+    padding: .5em;
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1.5em;
+    border: 1px black solid;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+#submit {
+    margin-top: 2em;
+    text-align: center;
+}
+
+table th{
+    border-bottom: solid;
+}
+td {
+    border-bottom: solid 1px black;
+    padding: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+table{
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 1.5em;
+    position: inline;
+    border-collapse: collapse;
+    max-width: 70%;
+}
+
+.clickable:hover{
+    background-color: rgb(211, 211, 211)
+}
+
+
