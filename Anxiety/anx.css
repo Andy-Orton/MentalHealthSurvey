@@ -44,10 +44,16 @@ h1 {
     text-align: center;
 }
 
+#Reset{
+    margin-top: 2em;
+    text-align: center;
+}
+
 table th{
     border-bottom: solid;
 }
 td {
+    align-content: center;
     border-bottom: solid 1px black;
     padding: 5px;
     padding-left: 1em;

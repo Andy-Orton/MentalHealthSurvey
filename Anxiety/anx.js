@@ -47,24 +47,34 @@ $(function(){
 
     $('#submit').click(function(e){
         e.preventDefault();
-        if($('input:checked').size == 0){
-            console.log("hi")
-        }
-        $('#result').remove()
-        var sum = $.map($('input:checked'), (elem, i) => elem.value).reduce((a, b) => parseInt(a) + parseInt(b))
-        if(sum <= 5){
-            $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of mild anxiety.<br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor.</p></div>  `)
-        }
-        else if(sum >= 5 && sum <= 9){
-            $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of moderate anxiety.  <br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor.</p></div>  `)
-        }
-        else if(sum >= 10 && sum <= 14){
-            $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of moderately severe anxiety.  <br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor. </p></div>  `)
-        }
-        else if(sum >= 16 && sum <= 27){
-            $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of severe anxiety.  <br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor. </p></div>  `)
-        }
+            if($('input:checked').size == null){
+                $('#result').remove()
+                sum = 0;
+               $('body').append(`<div id = "result"><p>Scores similar to yours generally indicate a possibility of mild anxiety.<br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor.</p></div>  `) 
+
+            }
+      
+            if($('input:checked').size != null)
+            {
+                $('#result').remove()
+                var sum = $.map($('input:checked'), (elem, i) => elem.value).reduce((a, b) => parseInt(a) + parseInt(b))
+                if(sum <= 5){
+                    $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of mild anxiety.<br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor.</p></div>  `)
+                }
+                else if(sum >= 5 && sum <= 9){
+                    $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of moderate anxiety.  <br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor.</p></div>  `)
+                }
+                else if(sum >= 10 && sum <= 14){
+                    $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of moderately severe anxiety.  <br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor. </p></div>  `)
+                }
+                else if(sum >= 16 && sum <= 27){
+                    $('body').append(`<div id = "result"><p>Your Score = ${sum}</p><p>Scores similar to yours generally indicate a possibility of severe anxiety.  <br>These results are not a diagnosis and are only verifiable by a licensed mental health professional or medical doctor. </p></div>  `)
+                }
+            }
+        $('#submit').attr("id", "Reset")
+        $('#Reset').html(`<input type="submit" value = "Reset"></input>`)
     })
+
 
     $('.clickable').click(function(e){        
         let child = e.target.childNodes[1];
